@@ -112,10 +112,12 @@ public class PlayService extends Service {
             startForeground(1, notification);
         } else {
             //Android5.0 -- Android7.0
-            Notification notification = new Notification.Builder(PlayService.this)
-                    .setSmallIcon(R.drawable.ic_launcher_background)
-                    .setDefaults(Notification.DEFAULT_ALL)
-                    .build();
+            Notification.Builder builder = new Notification.Builder(PlayService.this)
+                    .setSmallIcon(R.mipmap.music_notification)
+                    .setDefaults(Notification.DEFAULT_ALL);
+            RemoteViews remoteViews = new RemoteViews("com.felix.simplemusic"
+                    , R.layout.notification_play);
+            Notification notification = builder.setContent(remoteViews).build();
             //manager.notify(888, notification);
             startForeground(1, notification);
         }

@@ -7,7 +7,12 @@ import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by chaofei.xue on 2018/10/15.
@@ -17,29 +22,36 @@ public class ScannerFileUtils {
 
     public final static int SCANNER_ALL = 0;
     public final static int SCANNER_ASSIGN = 1;
-    private Observer<List> observer;
+    private Observer<List<ScannerInfoBean>> observer;
 
-    public ScannerFileUtils(Observer<List> observer) {
+    public ScannerFileUtils(Observer<List<ScannerInfoBean>> observer) {
         this.observer = observer;
     }
 
-    public List<ScannerInfoBean> sacnnerFile(int flag, File file) {
-        List<ScannerInfoBean> lists = new ArrayList<>();
-        if (flag == SCANNER_ALL) {
-            getFilePath(lists, flag, file);
-        } else if (flag == SCANNER_ASSIGN) {
-            getFilePath(lists, flag, file);
-        }
-        return lists;
+    public void sacnnerFile(final int flag, final File file) {
+        Observable<List<ScannerInfoBean>> observable = Observable.create(new ObservableOnSubscribe<List<ScannerInfoBean>>() {
+            @Override
+            public void subscribe(ObservableEmitter<List<ScannerInfoBean>> e) throws Exception {
+                List<ScannerInfoBean> lists = new ArrayList<>();
+                if (flag == SCANNER_ALL) {
+                    getFilePath(lists, flag, file);
+                } else if (flag == SCANNER_ASSIGN) {
+                    getFilePath(lists, flag, file);
+                }
+                e.onNext(lists);
+            }
+        });
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
     }
 
 
     private void getFilePath(final List<ScannerInfoBean> lists, final int flag, File file) {
-
         file.listFiles(new FileFilter() {
             @Override
             public boolean accept(File file) {
-
                 String name = file.getName();
                 int i = name.indexOf('.');
                 if (i != -1) {

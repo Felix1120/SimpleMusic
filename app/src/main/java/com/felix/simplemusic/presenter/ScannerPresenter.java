@@ -25,7 +25,7 @@ public class ScannerPresenter implements IScannerPresenter {
 
     @Override
     public void scannerAllFile() {
-
+        
     }
 
     @Override
