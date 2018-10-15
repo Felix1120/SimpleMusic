@@ -22,11 +22,12 @@
             android:theme="@style/StatusBarAlphaTheme" />
 
         <service
-            android:process=":remote"
             android:name=".service.PlayService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"
+            android:process=":remote"></service>
+
+        <activity android:name=".activity.ScannerActivity"></activity>
     </application>
 
 </manifest>

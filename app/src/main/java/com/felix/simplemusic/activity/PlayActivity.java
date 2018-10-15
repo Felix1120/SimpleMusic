@@ -27,6 +27,7 @@ public class PlayActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void initView() {
         isStatusBarWrite = false;
+        //添加进入 退出动画
         Transition transition = TransitionInflater.from(mContext)
                 .inflateTransition(R.transition.slide);
         getWindow().setExitTransition(transition);
@@ -37,6 +38,7 @@ public class PlayActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void initData() {
         imgClose.setOnClickListener(this);
+        //开启后台播放的服务
         startService(new Intent(mContext, PlayService.class));
     }
 

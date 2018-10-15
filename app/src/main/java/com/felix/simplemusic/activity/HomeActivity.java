@@ -236,6 +236,8 @@ public class HomeActivity extends BaseActivity implements IHomeView, View.OnClic
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_menu_scan_music:
+                startActivity(new Intent(mContext, ScannerActivity.class),
+                        ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
             case R.id.nav_menu_theme:
                 break;

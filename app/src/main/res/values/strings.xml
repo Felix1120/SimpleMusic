@@ -5,7 +5,7 @@
     <string name="author">歌手</string>
     <string name="like">喜欢</string>
     <string name="album">专辑</string>
-    
+
     <!--侧滑菜单-->
     <string name="nav_menu_scan_music">扫描音乐</string>
     <string name="nav_menu_theme">个性皮肤</string>
@@ -13,5 +13,10 @@
     <string name="nav_menu_check_version">检查更新</string>
     <string name="nav_menu_about">关于软件</string>
 
+    <!--扫描歌曲-->
+    <string name="scanner_title">扫描音乐</string>
+    <string name="all_scanner">全局扫描</string>
+    <string name="stop_scanner">暂停扫描</string>
+    <string name="assign_scanner">指定位置</string>
 
 </resources>
