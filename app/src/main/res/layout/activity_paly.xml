@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressBar_activity_play"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="@color/color_text_write"
+        android:progress="50" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/progressBar_activity_play"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/test_1" />
+
+    <TextView
+        android:id="@+id/tv_current_time_activity_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBar_activity_play"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:text="01:28"
+        android:textColor="@color/color_text_gray_0"
+        android:textSize="@dimen/text_size_mini_xx" />
+
+    <TextView
+        android:id="@+id/tv_total_time_activity_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBar_activity_play"
+        android:layout_alignParentEnd="true"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:text="05:08"
+        android:textColor="@color/color_text_gray_0"
+        android:textSize="@dimen/text_size_mini_xx" />
+
+    <TextView
+        android:id="@+id/song_name_activity_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar_activity_play"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="30dp"
+        android:text="演员"
+        android:textColor="@color/color_text_gray_3"
+        android:textSize="@dimen/text_size_xx" />
+
+    <TextView
+        android:id="@+id/singer_activity_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_name_activity_play"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:text="薛之谦"
+        android:textColor="@color/color_text_gray_1"
+        android:textSize="@dimen/text_size_mini_x" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/img_close_activity_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/down_activity_play" />
+
+        <ImageView
+            android:id="@+id/img_more_activity_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/more_play" />
+
+        <ImageView
+            android:id="@+id/img_like_activity_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/img_more_activity_play"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/unlike" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_play_bar_activity_play"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/singer_activity_play">
+
+        <ImageView
+            android:id="@+id/img_play_activity_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/pause_black" />
+
+
+        <ImageView
+            android:id="@+id/img_up_song_activity_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/img_play_activity_home"
+            android:paddingRight="55dp"
+            android:src="@mipmap/up_song_black" />
+
+
+        <ImageView
+            android:id="@+id/img_down_song_activity_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/img_play_activity_home"
+            android:paddingLeft="55dp"
+            android:src="@mipmap/down_song_black" />
+
+        <ImageView
+            android:id="@+id/img_song_list_activity_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="20dp"
+            android:src="@mipmap/single_play" />
+
+        <ImageView
+            android:id="@+id/img_play_model_activity_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp"
+            android:src="@mipmap/random" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_play_bar_activity_play">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="是因为爱你我才选择表演"
+            android:layout_marginTop="30dp"
+            android:textSize="@dimen/text_size_mini_xx"
+            android:textColor="@color/color_text_gray_1"
+            android:background="#ececf3" />
+    </FrameLayout>
+
+</RelativeLayout>

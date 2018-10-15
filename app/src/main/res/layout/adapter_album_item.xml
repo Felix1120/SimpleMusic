@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_play_bar_adapter_album_item"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/color_text_gray_0"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/album_default" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/center_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_album_adapter_album_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/center_line"
+            android:text="范特西"
+            android:textColor="@color/color_text_gray_2"
+            android:textSize="@dimen/text_size_mini_x" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_album_adapter_album_item"
+            android:text="周杰伦"
+            android:textColor="@color/color_text_gray_1"
+            android:textSize="@dimen/text_size_mini_xx" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_text_gray_0" />
+
+    </RelativeLayout>
+
+</LinearLayout>

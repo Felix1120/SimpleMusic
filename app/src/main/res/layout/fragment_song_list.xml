@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary_write">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:background="@color/color_text_gray_0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_hot_fragment_song_list"
+            android:layout_width="match_parent"
+            android:layout_height="131dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/tv_line_fragment_song_list"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/color_text_gray_0" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_content_fragment_song_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_play_bar_adapter_song_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_song_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_line1_adapter_song_list_item"
+            android:ellipsize="marquee"
+            android:maxWidth="180dp"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:text="爱得太迟"
+            android:textColor="@color/color_text_gray_2"
+            android:textSize="@dimen/text_size_mini_x" />
+
+        <TextView
+            android:id="@+id/tv_line1_adapter_song_list_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_quality_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_song_adapter_song_list_item"
+            android:ellipsize="marquee"
+            android:maxWidth="180dp"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:text="SQ"
+            android:textColor="@color/color_sq_gold"
+            android:textSize="@dimen/text_size_mini_xx" />
+
+        <TextView
+            android:id="@+id/tv_singer_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_song_adapter_song_list_item"
+            android:layout_toRightOf="@id/tv_quality_adapter_song_list_item"
+            android:paddingLeft="5dp"
+            android:text="古巨基"
+            android:textColor="@color/color_text_gray_1"
+            android:textSize="@dimen/text_size_mini_xx" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right|center">
+
+        <TextView
+            android:id="@+id/tv_time_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="03:59"
+            android:textColor="@color/color_text_gray_1"
+            android:textSize="@dimen/text_size_mini_xx" />
+
+        <ImageView
+            android:id="@+id/img_like_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:src="@mipmap/unlike" />
+
+        <ImageView
+            android:id="@+id/img_more_adapter_song_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:src="@mipmap/more" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">@color/color_primary_write</color>
+    <color name="colorPrimaryDark">@color/color_primary_write</color>
+    <!--my color-->
+    <color name="color_primary_write">#FFFFFF</color>
+    <color name="color_text_write">#FFFFFF</color>
+    <color name="color_write">#FFFFFF</color>
+    <color name="color_bar_write">#FFFFFF</color>
+    <color name="color_text_black">#000000</color>
+    <color name="color_text_nav_checked">#009999</color>
+    <color name="color_text_nav_no_checked">#8a8a8a</color>
+    <!--说明：颜色后面有数字的 数字越大颜色越深-->
+    <color name="color_text_gray_0">#eeeeee</color>
+    <color name="color_text_gray_1">#8a8a8a</color>
+    <color name="color_text_gray_2">#4a4a4a</color>
+    <color name="color_text_gray_3">#3a3a3a</color>
+    <color name="color_text_gray_4">#2a2a2a</color>
+    <!--alpha-->
+    <color name="color_alpha_gray_1">#88000000</color>
+    <color name="color_alpha_gray_2">#99000000</color>
+    <!--song list color-->
+    <color name="color_sq_gold">#ec8000</color>
+</resources>

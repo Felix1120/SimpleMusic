@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--widget size-->
+    <dimen name="action_bar_height">50dp</dimen>
+    <dimen name="et_search_shape_width">1dp</dimen>
+    <dimen name="et_radius_shape">5dp</dimen>
+
+    <!--text size-->
+    <dimen name="text_size_mini_xxx">10dp</dimen>
+    <dimen name="text_size_mini_xx">12dp</dimen>
+    <dimen name="text_size_mini_x">14dp</dimen>
+    <dimen name="text_size_default">16dp</dimen>
+    <dimen name="text_size_x">18dp</dimen>
+    <dimen name="text_size_xx">20dp</dimen>
+    <dimen name="text_size_xxx">22dp</dimen>
+</resources>
