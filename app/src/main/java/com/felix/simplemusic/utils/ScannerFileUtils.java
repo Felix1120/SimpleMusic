@@ -28,13 +28,15 @@ public class ScannerFileUtils {
         this.observer = observer;
     }
 
-    public void sacnnerFile(final int flag, final File file) {
+    public void scannerFile(final int flag, final File file) {
         Observable<List<ScannerInfoBean>> observable = Observable.create(new ObservableOnSubscribe<List<ScannerInfoBean>>() {
             @Override
             public void subscribe(ObservableEmitter<List<ScannerInfoBean>> e) throws Exception {
                 List<ScannerInfoBean> lists = new ArrayList<>();
                 if (flag == SCANNER_ALL) {
+                    MyLog.info("ScannerFileUtils scanner all start...");
                     getFilePath(lists, flag, file);
+                    MyLog.info("ScannerFileUtils scanner all end...");
                 } else if (flag == SCANNER_ASSIGN) {
                     getFilePath(lists, flag, file);
                 }
@@ -65,6 +67,7 @@ public class ScannerFileUtils {
                         // 得到文件名称
                         String fileName = file.getName();
                         ScannerInfoBean sif = new ScannerInfoBean(filePath, fileName);
+                        MyLog.info(fileName, filePath);
                         lists.add(sif);
                         return true;
                     }

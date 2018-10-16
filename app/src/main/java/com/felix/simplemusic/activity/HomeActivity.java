@@ -107,7 +107,6 @@ public class HomeActivity extends BaseActivity implements IHomeView, View.OnClic
 
             }
         });
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

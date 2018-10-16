@@ -1,6 +1,10 @@
 package com.felix.simplemusic.activity;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.View;
@@ -11,6 +15,7 @@ import com.felix.simplemusic.R;
 import com.felix.simplemusic.base.BaseActivity;
 import com.felix.simplemusic.presenter.IScannerPresenter;
 import com.felix.simplemusic.presenter.ScannerPresenter;
+import com.felix.simplemusic.utils.MyLog;
 import com.felix.simplemusic.view.IScannerView;
 
 import butterknife.BindView;
@@ -51,7 +56,13 @@ public class ScannerActivity extends BaseActivity implements IScannerView, View.
 
     @Override
     public void initData() {
-
+        //动态申请文件读写权限
+        if (ContextCompat.checkSelfPermission(ScannerActivity.this,
+                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(ScannerActivity.this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE
+                            ,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
     }
 
     @Override
@@ -62,6 +73,7 @@ public class ScannerActivity extends BaseActivity implements IScannerView, View.
                 break;
             case R.id.btn_all_scanner_activity:
                 presenter.scannerAllFile();
+                MyLog.info("all scanner click...");
                 break;
             case R.id.btn_assign_scanner_activity:
                 break;
