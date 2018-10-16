@@ -1,11 +1,14 @@
 package com.felix.simplemusic.presenter;
 
 import android.content.Context;
+import android.media.MediaMetadataRetriever;
+import android.os.Message;
 
 import com.felix.simplemusic.bean.ScannerInfoBean;
 import com.felix.simplemusic.model.IScannerModel;
 import com.felix.simplemusic.model.ScannerModel;
 import com.felix.simplemusic.utils.MyLog;
+import com.felix.simplemusic.utils.ScannerFileUtils;
 import com.felix.simplemusic.view.IScannerView;
 
 import java.util.List;
@@ -33,6 +36,7 @@ public class ScannerPresenter implements IScannerPresenter {
     @Override
     public void scannerAllFile() {
         MyLog.info("presenter scanner all file ...");
+        scannerView.search(ScannerFileUtils.SCANNER_ALL);
         scannerModel.scannerAllFile(new Observer<List<ScannerInfoBean>>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -44,6 +48,18 @@ public class ScannerPresenter implements IScannerPresenter {
                 MyLog.info("onNext ", scannerInfoBeans.size()+"");
                 for (ScannerInfoBean sib : scannerInfoBeans) {
                     MyLog.info(sib.getFineName(), sib.getFilePath());
+                    MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+                    try {
+                        mmr.setDataSource(sib.getFilePath());
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE));
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_BITRATE));
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
+                        MyLog.info(sib.getFineName(), mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_MIMETYPE));
+                    }catch (Exception e){
+                        MyLog.info("illegal music file");
+                    }
                 }
             }
 
@@ -54,7 +70,7 @@ public class ScannerPresenter implements IScannerPresenter {
 
             @Override
             public void onComplete() {
-
+                scannerView.noSearch(ScannerFileUtils.SCANNER_ALL);
             }
         });
     }

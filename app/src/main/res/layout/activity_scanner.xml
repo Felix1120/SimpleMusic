@@ -49,6 +49,7 @@
             android:src="@mipmap/folder" />
 
         <ImageView
+            android:id="@+id/img_search_scanner_activity"
             android:visibility="gone"
             android:src="@mipmap/scanner"
             android:layout_centerInParent="true"

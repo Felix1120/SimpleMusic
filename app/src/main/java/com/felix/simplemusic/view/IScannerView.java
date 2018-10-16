@@ -5,4 +5,7 @@ package com.felix.simplemusic.view;
  */
 
 public interface IScannerView {
+    void search(int flag);
+    void noSearch(int flag);
+    void messageShow();
 }

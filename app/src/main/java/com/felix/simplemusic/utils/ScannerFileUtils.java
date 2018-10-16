@@ -41,6 +41,7 @@ public class ScannerFileUtils {
                     getFilePath(lists, flag, file);
                 }
                 e.onNext(lists);
+                e.onComplete();
             }
         });
 
@@ -73,7 +74,6 @@ public class ScannerFileUtils {
                     }
                 } else if (file.isDirectory()) {
                     // 继续递归搜索子目录
-                    // 如果注释 则只搜索当前目录
                     if (flag == SCANNER_ALL) {
                         getFilePath(lists, flag, file);
                     }

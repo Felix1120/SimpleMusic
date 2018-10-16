@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SimpleMusic.iml" filepath="$PROJECT_DIR$/SimpleMusic.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\AStudio\SimpleMusic\app\app.iml" filepath="E:\AStudio\SimpleMusic\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simplemusic.iml" filepath="$PROJECT_DIR$/simplemusic.iml" />
-      <module fileurl="file://E:\AStudio\SimpleMusic\simplemusic.iml" filepath="E:\AStudio\SimpleMusic\simplemusic.iml" />
     </modules>
   </component>
 </project>
